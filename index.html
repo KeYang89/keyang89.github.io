@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" ng-app="raw">
+<head>
+  <title>S&B Data Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Keywords" content="SDD,visualization,data,design,spreadsheet,interface,vector graphics,SVG,PNG,JSON">
+  <meta name="Description" content="SDD, missing link between spreadsheets and data visualization, by DensityDesign and Calibro, Giorgio Caviglia, Matteo Azzi, Michele Mauri, Giorgio Uboldi, Tommaso Elli">
+  <meta name="author" content="Ke Yang">
+
+  <!-- Social Networks meta tags -->
+  <meta property="og:title" content="S&B Data Dashboard">
+  <meta property="og:description" content="The missing link between spreadsheets and data visualization.">
+  <meta property="og:image" content="#">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="#">
+  <meta property="og:type" content="article">
+
+
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic|Roboto:400,700italic,900italic,500italic,400italic,100italic,300italic,900,700,500,300,100|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700|Chivo:400,900,400italic,900italic|Pacifico|Dancing+Script:400,700|Cousine:400,700|Arimo:300,400,300italic,400italic,700|Nunito:400,300,700|Oxygen:400,700,300|Lato:100,200,400,700,900&subset=latin,latin-ext"/>
+
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/angular-bootstrap-colorpicker/css/colorpicker.scss">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="lib/codemirror/lib/codemirror.css">
+
+  <link rel="stylesheet" href="css/raw.css"/>
+  <link rel="icon" href="favicon.ico?v=2" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body data-spy="scroll" data-target="#raw-nav">
+
+  <header class="navbar navbar-static-top" role="navigation" id="raw-nav" role="banner">
+    <div class="container">
+     <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#raw-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" target="_blank">
+          <img alt="Data Dashboard" src="imgs/sblogo.png">
+        </a>
+      </div>
+
+      <nav class="collapse navbar-collapse" role="navigation" id="raw-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" target="_blank">About</a></li>
+          <li><a href="#" target="_blank">Documentation</a></li>
+          <li><a href="#" target="_blank">Tutorial</a></li>
+          <li><a href="/test_sb_internal_playground" target="_blank">Other Tools</a></li>
+        </ul>
+      </nav>
+
+      <!--<span class="pull-left">The missing link between spreadsheets and vector graphics</span class="pull-left">-->
+
+    </div>
+  </header>
+
+  <div ng-view class="wrap"></div>
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Data visualization tool created for S & B Engineers and Constructors</p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <p><a href="mailto:keyang1@sbec.com"><i class="fa fa-envelope breath-right"></i>keyang1@sbec.com</a></p>
+          
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <p><a href="http://sbec.com"><i class="fa fa-link breath-right"></i>SBEC</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jquery -->
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/jquery-ui/jquery-ui.min.js"></script>
+  <script src="lib/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+  <!-- bootstrap -->
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+  <!-- d3 -->
+  <script src="lib/d3/d3.min.js"></script>
+  <script src="lib/d3-plugins/sankey/sankey.js"></script>
+  <script src="lib/d3-plugins/hexbin/hexbin.js"></script>
+  <script src="lib/d3-plugins-density/horizon.js"></script>
+  <script src="lib/d3-plugins/box/box.js"></script>
+  <!-- codemirror -->
+  <script src="lib/codemirror/lib/codemirror.js"></script>
+  <script src="lib/codemirror/addon/display/placeholder.js"></script>
+  <!-- canvastoblob -->
+  <script src="lib/canvas-toBlob.js/canvas-toBlob.js"></script>
+  <!-- filesaver -->
+  <script src="lib/FileSaver/FileSaver.js"></script>
+  <!-- zeroclipboard -->
+  <script src="lib/zeroclipboard/dist/ZeroClipboard.min.js"></script>
+  <!-- raw -->
+  <script src="lib/raw.js"></script>
+
+  <!-- charts -->
+  <script src="charts/treemap.js"></script>
+  <script src="charts/streamgraph.js"></script>
+  <script src="charts/scatterPlot.js"></script>
+  <script src="charts/packing.js"></script>
+  <script src="charts/clusterDendrogram.js"></script>
+  <script src="charts/voronoi.js"></script>
+  <script src="charts/delaunay.js"></script>
+  <script src="charts/alluvial.js"></script>
+  <script src="charts/clusterForce.js"></script>
+  <script src="charts/convexHullMultiple.js"></script>
+  <script src="charts/hexagonalBinning.js"></script>
+  <script src="charts/parallelCoordinates.js"></script>
+  <script src="charts/circularDendrogram.js"></script>
+  <script src="charts/smallMultiplesArea.js"></script>
+  <script src="charts/bumpChart.js"></script>
+  <script src="charts/sunburst.js"></script>
+  <script src="charts/gantt.js"></script>
+  <script src="charts/horizon.js"></script>
+  <script src="charts/boxPlot.js"></script>
+  <script src="charts/barChart.js"></script>
+  <script src="charts/pieChart.js"></script>
+
+  <!-- angular -->
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-route/angular-route.min.js"></script>
+  <script src="lib/angular-animate/angular-animate.min.js"></script>
+  <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="lib/angular-strap/dist/angular-strap.min.js"></script>
+  <script src="lib/angular-strap/dist/angular-strap.tpl.min.js"></script>
+  <script src="lib/angular-ui/build/angular-ui.js"></script>
+  <script src="lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
+  <script src="lib/ng-file-upload/ng-file-upload.min.js"></script>
+  <script src="lib/is_js/is.min.js"></script>
+  <script src="lib/js-xlsx/dist/xlsx.full.min.js"></script>
+
+
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+  <!-- google analytics -->
+  <script src="js/analytics.js"></script>
+
+
+</body>
+</html>
