@@ -1,4 +1,5 @@
-Bugs Report
+#Bugs Report
+**Special thanks to Phillip Cantin for testing and very helpful suggesions**
 -----
 Browsers Tested:
 - Internet Explorer 11
