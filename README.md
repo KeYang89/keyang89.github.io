@@ -1,10 +1,11 @@
 #Bugs Report
+-----
 **Special thanks to Phillip Cantin for testing and very helpful suggesions**
 -----
-Browsers Tested:
-- Internet Explorer 11
-- Mozilla Firefox 51.0.1 (32-bit)
-- Google Chrome 63.0.3239.108 (64-bit)
+> Browsers Tested:
+> - Internet Explorer 11
+> - Mozilla Firefox 51.0.1 (32-bit)
+> - Google Chrome 63.0.3239.108 (64-bit)
 
 - 1.
 Browser:	All
