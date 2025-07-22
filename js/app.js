@@ -18,4 +18,11 @@ angular.module('raw', [
   $routeProvider.when('/', {templateUrl: 'partials/main.html', controller: 'RawCtrl'});
   $routeProvider.otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
+  $routeProvider.when('/patents', {
+      templateUrl: 'views/patents.html',
+      controller: 'PatentsCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
 }]);
