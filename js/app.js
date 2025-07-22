@@ -25,10 +25,6 @@ angular.module('raw', [
       templateUrl: 'partials/main.html',
       controller: 'RawCtrl'
     })
-    .when('/patents', {
-      templateUrl: 'partials/patents.html',
-      controller: 'RawCtrl'
-    })
     .otherwise({
       redirectTo: '/'
     });
