@@ -1223,7 +1223,34 @@ pre.CodeMirror-placeholder {
     font-size: 11px;
     margin-left: 5px;
 }
-
+ #patents ul.list-unstyled {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+  }
+  #patents ul.list-unstyled li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  #patents ul.list-unstyled li:hover {
+    background-color: #e6f7ff;
+  }
+  #patents ul.list-unstyled li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05em;
+  }
+  #patents ul.list-unstyled li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
 @keyframes spin {
     from { transform: scale(1) rotate(0deg); }
     to { transform: scale(1) rotate(360deg); }
