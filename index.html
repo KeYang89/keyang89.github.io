@@ -17,7 +17,6 @@
   <meta property="og:url" content="#">
   <meta property="og:type" content="article">
 
-
   <script>
     document.write('<base href="' + document.location + '" />');
   </script>
@@ -33,71 +32,121 @@
   <link rel="icon" href="imgs/profile.png" type="image/x-icon">
   <link rel="shortcut icon" href="imgs/profile.png" type="image/x-icon">
 
+  <!-- Mobile nav fix: ensure collapsed menu items are visible and dropdowns work -->
+  <style>
+    @media (max-width: 767px) {
+      /* Ensure the collapsible nav is fully visible when open */
+      .navbar-collapse.in {
+        display: block !important;
+        overflow-y: auto !important;
+      }
+
+      /* Make sure nav items stack properly */
+      .navbar-nav {
+        margin: 0;
+        float: none !important;
+      }
+
+      .navbar-nav > li {
+        float: none !important;
+      }
+
+      .navbar-nav > li > a {
+        padding: 10px 15px;
+      }
+
+      /* Dropdown menus open inline (not floating) on mobile */
+      .navbar-nav .open .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .navbar-nav .open .dropdown-menu > li > a,
+      .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 5px 15px 5px 25px;
+      }
+
+      .navbar-nav .open .dropdown-menu > li > a {
+        line-height: 20px;
+        color: inherit;
+      }
+
+      .navbar-nav .open .dropdown-menu > li > a:hover,
+      .navbar-nav .open .dropdown-menu > li > a:focus {
+        background-image: none;
+      }
+    }
+  </style>
 </head>
 
 <body data-spy="scroll" data-target="#raw-nav">
 
- <header class="navbar navbar-static-top" id="raw-nav" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#raw-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/" target="_blank">
-        <img alt="Data Dashboard" src="imgs/profile.png">
-      </a>
+  <header class="navbar navbar-static-top" id="raw-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#raw-navbar" aria-expanded="false" aria-controls="raw-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" target="_blank">
+          <img alt="Data Dashboard" src="imgs/profile.png">
+        </a>
+      </div>
+
+      <nav class="collapse navbar-collapse" id="raw-navbar" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              AI <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Artificial Life</li>
+              <li><a href="/GameEngineForPlanets/" target="_blank">Planet Engine</a></li>
+              <li><a href="https://biomesyn.com/" target="_blank">BiomeSyn</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">AI for Earth</li>
+              <li><a href="https://www.soilmend.org/" target="_blank">SoilMend</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Interactive <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/duckgame/" target="_blank">2D Game</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">3D</li>
+              <li><a href="/littlePrince" target="_blank">3D Book</a></li>
+              <li><a href="/littlePrince/pet.html" target="_blank">3D Pet</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Tools <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/test_sb_internal_playground" target="_blank">PDF Editing Tools</a></li>
+              <li><a href="/elastic_tutorial" target="_blank">Elasticsearch Tutorials</a></li>
+              <li><a href="https://classic.yarnpkg.com/en/package/react-ant-scheduler" target="_blank">React Ant Scheduler</a></li>
+            </ul>
+          </li>
+
+          <li><a href="https://coyoteke.com/patents" target="_blank">Patents</a></li>
+          <li><a href="https://kbmusee.github.io" target="_blank">Art Works</a></li>
+          <li><a href="https://www.amazon.com/dp/B0DB1FH32T" target="_blank">Zebra</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <nav class="collapse navbar-collapse" id="raw-navbar" role="navigation">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            AI <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">Artificial Life</li>
-            <li><a href="/GameEngineForPlanets/" target="_blank">Planet Engine</a></li>
-            <li><a href="https://biomesyn.com/" target="_blank">BiomeSyn</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">AI for Earth</li>
-            <li><a href="https://www.soilmend.org/" target="_blank">SoilMend</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            Interactive <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/duckgame/" target="_blank">2D Game</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">3D</li>
-            <li><a href="/littlePrince" target="_blank">3D Book</a></li>
-            <li><a href="/littlePrince/pet.html" target="_blank">3D Pet</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            Tools <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/test_sb_internal_playground" target="_blank">PDF Editing Tools</a></li>
-            <li><a href="/elastic_tutorial" target="_blank">Elasticsearch Tutorials</a></li>
-            <li><a href="https://classic.yarnpkg.com/en/package/react-ant-scheduler" target="_blank">React Ant Scheduler</a></li>
-          </ul>
-        </li>
-
-        <li><a href="https://coyoteke.com/patents" target="_blank">Patents</a></li>
-        <li><a href="https://kbmusee.github.io" target="_blank">Art Works</a></li>
-        <li><a href="https://www.amazon.com/dp/B0DB1FH32T" target="_blank">Zebra</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
   <div ng-view class="wrap"></div>
 
@@ -109,7 +158,6 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
           <p><a href="mailto:twitchcoyote@gmail.com"><i class="fa fa-envelope breath-right"></i>twitchcoyote@gmail.com</a></p>
-          
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
           <p><a href="http://coyoteke.com"><i class="fa fa-link breath-right"></i>CoyoteKe.com</a></p>
@@ -179,20 +227,18 @@
   <script src="lib/is_js/is.min.js"></script>
   <script src="lib/js-xlsx/dist/xlsx.full.min.js"></script>
 
-
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFREM81DZ4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-QFREM81DZ4');
   </script>
 
